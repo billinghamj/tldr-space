@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
 const mongo = require('mongodb');
 const storage = require('./storage');
+const twitter = require('./twitter');
 
 const app = express();
 export default app;
@@ -18,6 +19,7 @@ app.engine('handlebars', exphbs({
 
 app.set('port', process.env.PORT || 3000);
 app.set('storage', new storage(app));
+app.set('twitter', new twitter());
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'handlebars');
 
