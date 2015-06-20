@@ -18,7 +18,7 @@ export default class {
 
 	async getPaper(id) {
 		id = mongo.ObjectID(id);
-		return await Q.ninvoke(this.papers, 'findOne', { id: id });
+		return await Q.ninvoke(this.papers, 'findOne', { _id: id });
 	}
 
 	async getHeroPapers() {

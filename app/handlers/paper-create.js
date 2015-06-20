@@ -10,5 +10,5 @@ async function run(app, paper) {
 	paper.featuredGrid = !!paper.featuredGrid;
 
 	paper = await app.get('storage').createPaper(paper);
-	return '/papers/' + paper.id;
+	return '/papers/' + paper._id;
 }
