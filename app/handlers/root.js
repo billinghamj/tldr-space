@@ -8,8 +8,13 @@ export default function (req, res) {
 async function run(app) {
 	let storage = app.get('storage');
 
+	let heroPapers = await storage.getHeroPapers();
+
+	if (heroPapers[0])
+		heroPapers[0].first = true;
+
 	return {
-		heroPapers: await storage.getHeroPapers(),
+		heroPapers: heroPapers,
 		gridPapers: await storage.getGridPapers()
 	};
 }

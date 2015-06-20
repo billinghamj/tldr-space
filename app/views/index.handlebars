@@ -3,13 +3,13 @@
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
 			<ol class="carousel-indicators">
 				{{#each heroPapers}}
-					<li data-target="#myCarousel" data-slide-to="{{@index}}"></li>
+					<li data-target="#myCarousel" data-slide-to="{{@index}}" class="{{#first}}active{{/first}}"></li>
 				{{/each}}
 			</ol>
 
 			<div class="carousel-inner" role="listbox">
 				{{#each heroPapers}}
-					<div class="item">
+					<div class="item {{#first}}active{{/first}}">
 						<div>
 							<div class="row">
 								<img src="{{heroImage}}" class="col-md-12" />
