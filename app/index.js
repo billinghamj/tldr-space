@@ -2,6 +2,7 @@ const express = require('express');
 const http = require('http');
 const path = require('path');
 const Q = require('q');
+const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
 const mongo = require('mongodb');
 const storage = require('./storage');
@@ -19,6 +20,8 @@ app.set('port', process.env.PORT || 3000);
 app.set('storage', new storage(app));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'handlebars');
+
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', require('./handlers/root'));
 app.get('/papers/:paperId', require('./handlers/paper-show'));
