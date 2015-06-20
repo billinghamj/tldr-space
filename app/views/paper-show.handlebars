@@ -1,0 +1,20 @@
+<div class="clearfix">
+	<div class="hero-image col-md-8 center-block">
+		<img src={{paper.heroImage}} class="img-responsive">
+	</div>
+
+	<div class="col-md-12">
+		<h1>{{paper.title}}</h1>
+		<p>{{paper.description}}</p>
+
+		<div class="authors">
+			<p>By {{paper.authors}} (<a href="http://twitter.com/{{paper.authorTwitter}}">@{{paper.authorTwitter}}</a>)</p>
+		</div>
+
+		<div class="content">
+			<p>Article link: {{paper.documentUrl}}</p>
+
+			<p>{{paper.contentHtml}}</p>
+		</div>
+	</div>
+</div>
