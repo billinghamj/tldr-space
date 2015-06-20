@@ -24,6 +24,8 @@ app.set('view engine', 'handlebars');
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', require('./handlers/root'));
+app.post('/papers', require('./handlers/paper-create'));
+app.get('/papers/new', require('./handlers/paper-new'));
 app.get('/papers/:paperId', require('./handlers/paper-show'));
 
 const dbUrl = process.env.DATABASE_URL || 'mongodb://localhost/research-directory';
