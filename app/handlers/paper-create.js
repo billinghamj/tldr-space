@@ -6,6 +6,9 @@ export default function (req, res) {
 }
 
 async function run(app, paper) {
+	paper.featuredHero = !!paper.featuredHero;
+	paper.featuredGrid = !!paper.featuredGrid;
+
 	paper = await app.get('storage').createPaper(paper);
 	return '/papers/' + paper.id;
 }
