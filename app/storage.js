@@ -42,14 +42,14 @@ function checkPaper(paper) {
 
 	function err() { throw new Error('invalid paper'); };
 
-	if (str(paper.title) || len(paper.title, 1, 75)) err();
-	if (str(paper.description) || len(paper.description, 1, 400)) err();
-	if (str(paper.authors) || len(paper.authors, 1, 200)) err();
+	if (str(paper.title)) err();
+	if (str(paper.description)) err();
+	if (str(paper.authors)) err();
 	if (def(paper.authorTwitter) && (str(paper.authorTwitter) || !paper.authorTwitter.match(/^\w{1,15}$/))) err();
-	if (str(paper.contentHtml) || len(paper.contentHtml, 1)) err();
-	if (str(paper.heroImage) || urlSec(paper.heroImage)) err();
-	if (str(paper.smallImage) || urlSec(paper.smallImage)) err();
-	if (str(paper.documentUrl) || url(paper.documentUrl)) err();
+	if (str(paper.contentHtml)) err();
+	if (str(paper.heroImage)) err();
+	if (str(paper.smallImage)) err();
+	if (str(paper.documentUrl)) err();
 	if (def(paper.featuredHero) && bool(paper.featuredHero)) err();
 	if (def(paper.featuredGrid) && bool(paper.featuredGrid)) err();
 }
