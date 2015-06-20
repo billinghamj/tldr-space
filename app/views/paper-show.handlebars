@@ -1,6 +1,6 @@
 <div class="clearfix">
 	<div class="hero-image col-md-8 center-block">
-		<img src={{paper.heroImage}} class="img-responsive">
+		<img src={{paper.heroImage}} class="img-responsive" />
 	</div>
 
 	<div class="col-md-12">
@@ -12,9 +12,9 @@
 		</div>
 
 		<div class="content">
-			<p>Article link: {{paper.documentUrl}}</p>
+			<p><a href="{{paper.documentUrl}}" target="_blank">Access the original paper</a></p>
 
-			<p>{{paper.contentHtml}}</p>
+			{{{paper.contentHtml}}}
 		</div>
 	</div>
 </div>
