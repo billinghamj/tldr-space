@@ -10,14 +10,28 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 	<style>
+		.tile {
+			margin: 0 1em 1em 1em;
+			position: relative;
+		}
+
+		.tile a {
+			position: absolute;
+			top: 140px;
+			left: 25px;
+			color: white;
+			background-color: rgba(0, 0, 0, 0.6);
+			padding: 3px 5px;
+		}
+
 		footer {
 			width: 100%;
 			background-color: #eee;
-			height: 30px;
+			height: 40px;
 		}
 
-		footer p {
-			margin-top: 5px;
+		footer .footer-text {
+			margin-top: 7.5px;
 		}
 	</style>
 </head>
@@ -70,7 +84,7 @@
 </main>
 
 <footer>
-	<p class="col-md-12"><small>Terms &amp; conditions apply.</a></small></p>
+	<p class="col-md-12 footer-text"><small>Terms &amp; conditions apply.</a></small></p>
 </footer>
 
 </div>
