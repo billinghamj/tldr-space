@@ -33,15 +33,14 @@ export default class {
 }
 
 function checkPaper(paper) {
-	type = (obj, type) => typeof obj !== type;
-	str = str => type(str, 'string');
-	bool = obj => type(str, 'boolean');
-	def = obj => typeof obj === 'undefined' || obj !== null;
-	len = (str, min, max) => (min ? false : str.length < min) || (max ? false : str.length > max);
-	url = str => !str.match(/^https?:\/\/[\w-]+(\.[\w-]+)+(:\d+)?(\/\S*)?$/i);
-	urlSec = str => url(str) || !str.match(/^https/i);
+	function str(str) { return typeof str !== 'string' };
+	function bool(obj) { return typeof obj !== 'boolean' };
+	function def(obj) { return typeof obj === 'undefined' || obj !== null };
+	function len(str, min, max) { return (min ? false : str.length < min) || (max ? false : str.length > max) };
+	function url(str) { return !str.match(/^https?:\/\/[\w-]+(\.[\w-]+)+(:\d+)?(\/\S*)?$/i) };
+	function urlSec(str) { return url(str) || !str.match(/^https/i) };
 
-	err = () => { throw new Error('invalid paper'); }
+	function err() { throw new Error('invalid paper'); };
 
 	if (str(paper.title) || len(paper.title, 1, 75)) err();
 	if (str(paper.description) || len(paper.description, 1, 400)) err();
