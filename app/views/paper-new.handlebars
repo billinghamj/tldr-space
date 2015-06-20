@@ -4,55 +4,75 @@
 </style>
 
 <form method="post" action="/papers">
-	<label>
-		Title
-		<input name="title" type="text" required maxlength="75" />
-	</label>
+	<div class="form-group">
+		<label>
+			Title
+			<input name="title" type="text" class="form-control" required maxlength="75" />
+		</label>
+	</div>
 
-	<label>
-		Description
-		<textarea name="description" required maxlength="400" placeholder="markdown supported; please embed only HTTPS assets"></textarea>
-	</label>
+	<div class="form-group">
+		<label>
+			Description
+			<textarea name="description" class="form-control" required maxlength="400" rows="5" placeholder="markdown supported; please embed only HTTPS assets"></textarea>
+		</label>
+	</div>
 
-	<label>
-		Authors
-		<input name="authors" type="text" required maxlength="400" />
-	</label>
+	<div class="form-group">
+		<label>
+			Authors
+			<input name="authors" type="text" class="form-control" required maxlength="400" />
+		</label>
+	</div>
 
-	<label>
-		Author Twitter
-		<input name="authorTwitter" type="text" maxlength="15" placeholder="don't include the @" />
-	</label>
+	<div class="form-group">
+		<label>
+			Author Twitter
+			<input name="authorTwitter" type="text" class="form-control" maxlength="15" placeholder="don't include the @" />
+		</label>
+	</div>
 
-	<label>
-		Content HTML
-		<textarea name="contentHtml" required placeholder="markdown supported; please embed only HTTPS assets"></textarea>
-	</label>
+	<div class="form-group">
+		<label>
+			Content HTML
+			<textarea name="contentHtml" required class="form-control" rows="10" placeholder="markdown supported; please embed only HTTPS assets"></textarea>
+		</label>
+	</div>
 
-	<label>
-		Hero Image URL
-		<input name="heroImage" type="url" required placeholder="must start with https" />
-	</label>
+	<div class="form-group">
+		<label>
+			Hero Image URL
+			<input name="heroImage" type="url" class="form-control" required placeholder="must start with https" />
+		</label>
+	</div>
 
-	<label>
-		Small Image URL
-		<input name="smallImage" type="url" required placeholder="must start with https" />
-	</label>
+	<div class="form-group">
+		<label>
+			Small Image URL
+			<input name="smallImage" type="url" class="form-control" required placeholder="must start with https" />
+		</label>
+	</div>
 
-	<label>
-		Document URL
-		<input name="documentUrl" type="url" required placeholder="should start with https" />
-	</label>
+	<div class="form-group">
+		<label>
+			Document URL
+			<input name="documentUrl" type="url" class="form-control" required placeholder="should start with https" />
+		</label>
+	</div>
 
-	<label>
-		<input name="featuredHero" type="checkbox" />
-		feature in the hero?
-	</label>
+	<div class="checkbox">
+		<label>
+			<input name="featuredHero" type="checkbox" />
+			feature in the hero?
+		</label>
+	</div>
 
-	<label>
-		<input name="featuredGrid" type="checkbox" />
-		feature in the grid?
-	</label>
+	<div class="checkbox">
+		<label>
+			<input name="featuredGrid" type="checkbox" />
+			feature in the grid?
+		</label>
+	</div>
 
-	<input type="submit" />
+	<input type="submit" class="btn btn-primary" />
 </form>
