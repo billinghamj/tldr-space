@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #text_head {
 	color: #000000;
 	margin-left: 
@@ -13,6 +14,8 @@
 	font-family: 'Bangers', cursive;
 }
 
+=======
+>>>>>>> c0dd7088ccee995300073a9130ff154f7db92a79
 .tiles {
 	margin-top: 30px;
 }
@@ -39,9 +42,4 @@ footer {
 
 footer .footer-text {
 	margin-top: 7.5px;
-}
-
-p {
-	font-family: 'Arvo', serif;
-	color: #FFFFFF;
 }

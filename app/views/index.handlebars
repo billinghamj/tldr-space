@@ -1,165 +1,47 @@
-      <div id="availproductsview" class="ProductDisplay">
+<div id="availproductsview" class="ProductDisplay">
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<ol class="carousel-indicators">
+			{{#each heroPapers}}
+				<li data-target="#myCarousel" data-slide-to="{{@index}}"></li>
+			{{/each}}
+		</ol>
 
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<div class="carousel-inner" role="listbox">
+			{{#each heroPapers}}
+				<div class="item">
+					<div>
+						<div class="row">
+							<img src="{{heroImage}}" class="col-md-12" />
+						</div>
+					</div>
 
-          <!-- Indicators -->
-          <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
-          </ol>
+					<div>
+						<p class="text_head">{{title}}</p>
+						<p>{{description}}</p>
+					</div>
+				</div>
+			{{/each}}
+		</div>
 
+		<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
 
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner" role="listbox">
-
-		    <div class="item active">
-
-      		    <!-- Add column width stuff here later-->
-                <div> 
-                  <div class="row">
-
-                    <img src="//placekitten.com/g/400/200" class="col-md-12">
-
-                  </div>
-                </div>
-
-                <!-- Add column width stuff here later-->
-                <div > 
-
-	                <p class="text_head">Bubble Gum Juice</p>
-
-	                <p>
-	               
-	               stuff
-	               
-	                </p>
-
-              	</div>
-
-		    </div>
-
-		    <div class="item">
-		      
-      		    <!-- Add column width stuff here later-->
-                <div> 
-                  <div class="row">
-
-                    <img src="//placekitten.com/g/400/200" class="col-md-12">
-
-                  </div>
-                </div>
-
-                <!-- Add column width stuff here later-->
-                <div > 
-
-	                <p class="text_head">Bubble Gum Juice</p>
-
-	                <p>
-	               
-	               more stuff
-	               
-	                </p>
-
-              	</div>
-
-		    </div>
-
-		    <div class="item">
-		      
-      		    <!-- Add column width stuff here later-->
-                <div> 
-                  <div class="row">
-
-                    <img src="//placekitten.com/g/400/200" class="col-md-12">
-
-                  </div>
-                </div>
-
-                <!-- Add column width stuff here later-->
-                <div > 
-
-	                <p class="text_head">Bubble Gum Juice</p>
-
-	                <p>
-	               
-	               other stuff
-	               
-	                </p>
-
-              	</div>
-
-		    </div>
-
-		    <div class="item">
-		      
-      		    <!-- Add column width stuff here later-->
-                <div> 
-                  <div class="row">
-
-                    <img src="//placekitten.com/g/400/200" class="col-md-12">
-
-                  </div>
-                </div>
-
-                <!-- Add column width stuff here later-->
-                <div > 
-
-	                <p class="text_head">Bubble Gum Juice</p>
-
-	                <p>
-	               
-	               and more stuff
-	               
-	                </p>
-
-              	</div>
-
-		    </div>
-
-		  </div>
-
-          <!-- Left and right controls -->
-          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-
-
-    </div>
-
-  </div>
+		<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+</div>
 
 <div class="tiles clearfix">
 	<div class="row">
-		<div class="col-md-2 tile">
-			<img src="//placekitten.com/g/200/200">
-			<a href="#">An Amazing Scientific Discovery</a>
-		</div>
-
-		<div class="col-md-2 tile">
-			<img src="//placekitten.com/g/200/200">
-			<a href="#">Another Wonderful Discovery</a>
-		</div>
-
-		<div class="col-md-2 tile">
-			<img src="//placekitten.com/g/200/200">
-			<a href="#">Groundbreaking Research</a>
-		</div>
-
-		<div class="col-md-2 tile">
-			<img src="//placekitten.com/g/200/200">
-			<a href="#">Yet More Amazing Discoveries</a>
-		</div>
-
-		<div class="col-md-2 tile">
-			<img src="//placekitten.com/g/200/200">
-			<a href="#">World Changing Research</a>
-		</div>
+		{{#each gridPapers}}
+			<div class="col-md-2 tile">
+				<img src="{{smallImage}}" />
+				<a href="/papers/{{_id}}">{{title}}</a>
+			</div>
+		{{/each}}
 	</div>
 </div>
