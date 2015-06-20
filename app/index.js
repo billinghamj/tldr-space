@@ -1,10 +1,10 @@
 const express = require('express');
 const http = require('http');
-var path = require('path');
+const path = require('path');
 const Q = require('q');
+const exphbs = require('express-handlebars');
 const mongo = require('mongodb');
 const storage = require('./storage');
-var exphbs = require('express-handlebars');
 
 const app = express();
 export default app;

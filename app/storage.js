@@ -1,5 +1,5 @@
 const Q = require('q');
-const MongoDB = require('mongodb');
+const mongo = require('mongodb');
 
 export default class {
 	constructor(app) {
@@ -17,7 +17,7 @@ export default class {
 	}
 
 	async getPaper(id) {
-		id = MongoDB.ObjectID(id);
+		id = mongo.ObjectID(id);
 		return await Q.ninvoke(this.papers, 'findOne', { id: id });
 	}
 
