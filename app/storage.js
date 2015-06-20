@@ -38,7 +38,8 @@ function checkPaper(paper) {
 	bool = obj => type(str, 'boolean');
 	def = obj => typeof obj === 'undefined' || obj !== null;
 	len = (str, min, max) => (min ? false : str.length < min) || (max ? false : str.length > max);
-	url = url => !url.match(/^https:\/\/[\w-]+(\.[\w-]+)+(:\d+)?(\/\S*)?$/);
+	url = str => !str.match(/^https?:\/\/[\w-]+(\.[\w-]+)+(:\d+)?(\/\S*)?$/i);
+	urlSec = str => url(str) || !str.match(/^https/i);
 
 	err = () => { throw new Error('invalid paper'); }
 
@@ -47,8 +48,8 @@ function checkPaper(paper) {
 	if (str(paper.authors) || len(paper.authors, 1, 200)) err();
 	if (def(paper.authorTwitter) && (str(paper.authorTwitter) || !paper.authorTwitter.match(/^\w{1,15}$/))) err();
 	if (str(paper.contentHtml) || len(paper.contentHtml, 1)) err();
-	if (str(paper.heroImage) || url(paper.heroImage)) err();
-	if (str(paper.smallImage) || url(paper.smallImage)) err();
+	if (str(paper.heroImage) || urlSec(paper.heroImage)) err();
+	if (str(paper.smallImage) || urlSec(paper.smallImage)) err();
 	if (str(paper.documentUrl) || url(paper.documentUrl)) err();
 	if (def(paper.featuredHero) && bool(paper.featuredHero)) err();
 	if (def(paper.featuredGrid) && bool(paper.featuredGrid)) err();
