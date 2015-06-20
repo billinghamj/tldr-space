@@ -21,6 +21,7 @@ app.set('storage', new storage(app));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'handlebars');
 
+app.use(express.static(__dirname + '/static'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', require('./handlers/root'));
