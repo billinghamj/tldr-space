@@ -34,6 +34,13 @@ const dbUrl = process.env.DATABASE_URL || 'mongodb://localhost/research-director
 	app.set('db', db);
 	console.info('database connected');
 
+	await Q.ninvoke(db.collection('papers'), 'createIndexes', [
+		{ key: { featuredHero: 1 } },
+		{ key: { featuredGrid: 1 } }
+	]);
+
+	console.info('created indexes');
+
 	/* istanbul ignore if : not used during unit testing */
 	if (require.main === module) {
 		let server = http.createServer(app);
