@@ -10,5 +10,15 @@ async function run(app, paper) {
 	paper.featuredGrid = !!paper.featuredGrid;
 
 	paper = await app.get('storage').createPaper(paper);
+
+	let tweet = `${paper.title} -`;
+	if (paper.authorTwitter)
+		tweet += ` @${paper.authorTwitter}`;
+	tweet += ` https://tldr.space/papers/${paper._id}`;
+
+	app.get('twitter').tweet(tweet).catch(function (error) {
+		console.warn('failed to tweet', error);
+	});
+
 	return '/papers/' + paper._id;
 }
