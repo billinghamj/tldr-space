@@ -1,0 +1,58 @@
+<style>
+	/* temporary - remove me please! */
+	form label { display: block; }
+</style>
+
+<form method="post" action="/papers">
+	<label>
+		Title
+		<input name="title" type="text" required maxlength="75" />
+	</label>
+
+	<label>
+		Description
+		<textarea name="description" required maxlength="400" placeholder="markdown supported; please embed only HTTPS assets"></textarea>
+	</label>
+
+	<label>
+		Authors
+		<input name="authors" type="text" required maxlength="400" />
+	</label>
+
+	<label>
+		Author Twitter
+		<input name="authorTwitter" type="text" maxlength="15" placeholder="don't include the @" />
+	</label>
+
+	<label>
+		Content HTML
+		<textarea name="contentHtml" required placeholder="markdown supported; please embed only HTTPS assets"></textarea>
+	</label>
+
+	<label>
+		Hero Image URL
+		<input name="heroImage" type="url" required placeholder="must start with https" />
+	</label>
+
+	<label>
+		Small Image URL
+		<input name="smallImage" type="url" required placeholder="must start with https" />
+	</label>
+
+	<label>
+		Document URL
+		<input name="documentUrl" type="url" required placeholder="should start with https" />
+	</label>
+
+	<label>
+		<input name="featuredHero" type="checkbox" />
+		feature in the hero?
+	</label>
+
+	<label>
+		<input name="featuredGrid" type="checkbox" />
+		feature in the grid?
+	</label>
+
+	<input type="submit" />
+</form>
