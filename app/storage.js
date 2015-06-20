@@ -23,15 +23,13 @@ export default class {
 	}
 
 	async getHeroPapers() {
-		return await Q.ninvoke(this.papers, 'findMany', {
-			featuredHero: true
-		}).toArray();
+		let cursor = this.papers.find({ featuredHero: true });
+		return await Q.ninvoke(cursor, 'toArray');
 	}
 
 	async getGridPapers() {
-		return await Q.ninvoke(this.papers, 'findMany', {
-			featuredGrid: true
-		}).toArray();
+		let cursor = this.papers.find({ featuredGrid: true });
+		return await Q.ninvoke(cursor, 'toArray');
 	}
 }
 
