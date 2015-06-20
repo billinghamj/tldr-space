@@ -20,11 +20,7 @@ app.set('storage', new storage(app));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'handlebars');
 
-app.get('/', function(req, res) {
-	res.render('index');
-})
-
-// todo - handlers
+app.get('/', require('./handlers/root'));
 
 const dbUrl = process.env.DATABASE_URL || 'mongodb://localhost/research-directory';
 
